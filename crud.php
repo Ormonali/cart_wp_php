@@ -2,7 +2,7 @@
 
 //make connection
 function connect(){
-    $connection = mysqli_connect('127.0.0.1','orion','456398','cart');
+    $connection = mysqli_connect('127.0.0.1','YOUR_DB_USER','YOUR_DB_PASSWORD','cart');
     return $connection;
 }
 //add product to db
@@ -105,13 +105,4 @@ function getAllquery($query){
         $arr[] =mysqli_fetch_assoc($query);
     }
     return $arr;
-}
-function calculatePrices($a,$b){
-    $reversei = count($a)-1;
-    $price=array();
-    for($i=0;$i<count($a);$i++){
-        $price[] = $a[$reversei]*$b[$i];
-        $reversei--;
-    }
-    return $price;
 }

@@ -95,8 +95,14 @@ li.dropdown {
 .cartCheckbox{
     display: grid;
     grid-template-columns: 90% 10%;
-    
+    grid-gap: 5px;
 }
 .inCart{
     background: #bbb;
+}
+.contentShow{
+    min-height:400px;
+    max-width: 500px;
+    display:grid;
+    grid-template-rows: 50% 10%;
 }

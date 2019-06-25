@@ -18,10 +18,15 @@ $allProducts = getAllProduct()
                 <a href="/study/create.php">Добавить продукт</a>
             </div>
         </li>
-            <li><a href="cart.php">Корзина</a></li>
+        <li class="dropdown"><a href="cart.php">Корзина</a>
+            <div class="dropdown-content">
+                <a href="index.php">Добавить в корзину</a>
+            </div>
+        </li>
         </ul>
     
     </div>
+    <h1>Все продукты</h1>
     <div class="content">
         <div class="products">
             <?php if(count($allProducts)>0):?>
@@ -62,21 +67,6 @@ $allProducts = getAllProduct()
             
         </div> 
     </div>
+    <script src="showElement.js"></script>
 </body>
 </html>
-<script>
-    function showElement(x,y) {
-    // Get the checkbox
-    var checkBox = document.getElementById(x);
-    // Get the output text
-    var text = document.getElementById(y);
-
-    // If the checkbox is checked, display the output text
-    if (checkBox.checked == true){
-        text.style.display = "block";
-        text.setAttribute('required','');
-    } else {
-        text.style.display = "none";
-    }
-    }
-</script> 
