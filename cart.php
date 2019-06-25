@@ -2,7 +2,7 @@
 include('cartmethods.php');
 $get = inCart();
 
-$product_name = array_column($get,'product_name');
+$product_names = array_column($get,'product_name');
 $inCartId = array_column($get,'id');
 $quantity = array_column($get,'quantity');
 $price = array_column($get,'price');
@@ -31,9 +31,18 @@ $price = array_column($get,'price');
         <div class="content">
             <div class="products">
                 <div class="inCart">
-                    <?php var_dump($product_name)?>
-                    <?php var_dump($price)?>
-                    <?php var_dump($quantity)?>
+                    <?php if(!empty($product_names)):?>
+                        <?php for($i=0;$i<count($product_names);$i++):?>
+                            <div class="cartItems">
+                                <h1><?php echo $product_names[$i]?></h1>
+                                <a href="cartmethods.php?d=<?php echo $inCartId[$i]?>">Удалить</a>
+                                <input type="number" value="<?php echo $quantity[$i]?>">
+                                <p><?php echo $price[$i]?></p>
+                            </div>
+                        <?php endfor;?>
+                    <?php else:echo '<p>CART IS EMPTY</p>'?>
+                    <?php endif;?>
+                    <button><a href="index.php">назад</a></button>
                 </div>
             </div>
             <div class="cart">

@@ -97,3 +97,6 @@ li.dropdown {
     grid-template-columns: 90% 10%;
     
 }
+.inCart{
+    background: #bbb;
+}
