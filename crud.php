@@ -106,3 +106,12 @@ function getAllquery($query){
     }
     return $arr;
 }
+function calculatePrices($a,$b){
+    $reversei = count($a)-1;
+    $price=array();
+    for($i=0;$i<count($a);$i++){
+        $price[] = $a[$reversei]*$b[$i];
+        $reversei--;
+    }
+    return $price;
+}
